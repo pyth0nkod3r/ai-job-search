@@ -112,7 +112,10 @@ The candidate's strongest honest claims, in order:
     values leadership / critical thinking / global context.
   - AI DevTools Zoomcamp (Feb 2026) — include for AI engineering / agentic roles.
   - NDE UT Level II (Nov 2021) — include only for hardware-adjacent, NDT, oil &
-    gas, energy, infrastructure roles. Real certification, not exposure.
+    gas, energy, infrastructure roles. Real certification, not exposure. The
+    validity date is intentionally NOT shown on the master CV or in the cert
+    table; the drafter may mention recency in a cover letter only when the
+    posting asks for current/active certification.
   - CIPMN PM cert (SUPA programme) — list alongside the technical certs as
     "Project Management certification (CIPMN, via ITF's SUPA programme) — Reg.
     No. SUPA/NO.08972".

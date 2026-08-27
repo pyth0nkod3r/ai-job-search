@@ -80,7 +80,7 @@ framework_version: 1.1.1
 - Conducted ultrasonic inspection tests on pipelines of varying thicknesses to quantify wall-thickness loss and corrosion extent.
 - Interpreted piping and instrumentation diagrams (P&ID) and produced isometric sketches of tested pipelines to support inspection reporting.
 - Operated Olympus Epoch 600 ultrasonic flaw detector, UTG (ultrasonic thickness gauge), Eddyfi Teletest Focus, magnetic particle testing gear.
-- **NDE UT Level II certification** (Raydalink Limited, 12 Nov 2021, ASNT SNT-TC-1A 2015 Edition, valid until 11 Nov 2026) supports this line of work — 80 hrs training, 2 yrs experience recorded at issue.
+- **NDE UT Level II certification** (Raydalink Limited, 12 Nov 2021, ASNT SNT-TC-1A 2015 Edition) supports this line of work — 80 hrs training, 2 yrs experience recorded at issue.
 
 ### Network Engineering Intern — Nnamdi Azikiwe University
 **Location:** On-site — Awka, Anambra, Nigeria
@@ -213,7 +213,7 @@ framework_version: 1.1.1
 ### Engineering / Field
 | Certification | Issuer | Date | Notes |
 |---|---|---|---|
-| NDE Ultrasonic Testing Level II (per ASNT SNT-TC-1A 2015) | Raydalink Limited | 12 Nov 2021 | Cert RDL/UT/11/18/21; valid until 11 Nov 2026; 80 hrs training, 2 yrs experience; composite score 81.63 |
+| NDE Ultrasonic Testing Level II (per ASNT SNT-TC-1A 2015) | Raydalink Limited | 12 Nov 2021 | 80 hrs training, 2 yrs experience; composite score 81.63 |
 
 ### Professional Membership
 | Membership | Issuer | Notes |
