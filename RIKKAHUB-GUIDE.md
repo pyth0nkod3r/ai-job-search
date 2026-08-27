@@ -111,6 +111,24 @@ Say: *"schedule a job scrape every weekday at 9am and rank whatever's new"* — 
 assistant creates a scheduled job that runs the scrape + rank workflow unattended and
 reports back. Same pattern works for weekly dashboard reviews.
 
+### Choose your country/market
+
+The fork is multi-market: 16 country registries are preloaded in `markets/` — DK (the
+template's home), US, UK, CA, DE, CH, NL, NO, PL, ES, BR, CO, VN, IN, AU, CN — each with
+its portal inventory, CV conventions, and language defaults.
+
+```
+"which markets are available?"    → lists the registry
+"set market to Canada"            → switches portals, profile locale, CV language
+"search jobs in Germany"          → same, via trigger phrases
+```
+
+Switching a market: enables that country's job-board portals (installing them from their
+source forks after a code review you approve), disables the others, and updates your
+profile's location and CV language. Your tracker and scraped history carry over. Add a
+new market anytime with *"add a portal for <job board>"* — see the market file format in
+`markets/README.md`.
+
 ### Grow the toolkit
 
 - *"add a portal for <job board>"* — generates a new search skill following the
@@ -144,6 +162,7 @@ reports back. Same pattern works for weekly dashboard reviews.
 | `.claude/commands/`, `.claude/skills/` | Canonical workflow specs — the source of truth |
 | `.agents/skills/*-search/` | Portal search CLIs (Bun) |
 | `rikkahub-skills/` | The skills you install into RikkaHub Agent |
+| `markets/` | Country registries; active market in `CURRENT.json` |
 | `RIKKAHUB.md` | Technical canon: tool mapping, enablement checklist |
 | `job_search_tracker.csv` | Application tracker (created on first outcome) |
 | `job_scraper/seen_jobs.json` | Scraping dedup memory |
