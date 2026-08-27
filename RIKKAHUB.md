@@ -36,6 +36,24 @@ in each skill's frontmatter `description` are what routes a plain-language reque
 
 ---
 
+## Tool enablement checklist
+
+Before running any workflow, confirm these capabilities are on in the harness (RikkaHub
+Agent: Settings → the assistant's tool menu). Any missing capability degrades gracefully —
+say so, don't fake it:
+
+- **Workspace / shell + file tools** — required by everything (`workspace_shell`,
+  `workspace_read_file`, `workspace_write_file`, `workspace_edit_file`).
+- **Web fetch & extract** (`web_fetch`, `web_extract`) — required by scrape/apply/upskill.
+- **In-app browser** — needed only when a posting 403s or is JS-rendered.
+- **Sub-agents** (`subagent_dispatch`) — required by `/rank` batch scoring and `/apply`'s
+  reviewer pass. If disabled, fall back to doing those passes inline in the main context.
+- **Ask user** (`ask_user`) — required by `/setup` and every confirm-gate.
+
+Prefer pre-approving read-only shell verbs (`bun run`, `python3 salary_lookup.py`,
+`pdftotext`, `pdfinfo`, `pdflatex`, `lualatex`, `xelatex`, `git status`/`diff`/`log`);
+confirm before anything destructive (deleting files, force-push, mass overwrite).
+
 ## Sub-agents
 
 `/rank` Step 2 and `/apply`'s reviewer step dispatch parallel agents. Map to
@@ -46,6 +64,7 @@ in each skill's frontmatter `description` are what routes a plain-language reque
 - Cap ~5 jobs per agent for `/rank`; use `run_in_background: true` for >2 agents and poll
   with `subagent_get`.
 - Concurrency cap is 3 by default — stagger dispatches rather than firing 6 at once.
+- Reviewer/rank-scorer agents are critique-only: instruct them not to write files.
 
 ## Web research
 
@@ -75,11 +94,14 @@ pattern above.
 
 ## PDF compilation (`/apply` Step 5)
 
-LaTeX toolchain (texlive + moderncv + lmodern) is installed in this workspace. Compile
-from the repo root:
+LaTeX toolchain (texlive + moderncv + lmodern) is installed in this workspace. The stock
+template spec uses **`lualatex` for the CV** and **`xelatex` for the cover letter** — match
+the compile command to the template (a custom template registered via `/add-template`
+declares its own compile command; that overrides the stock default):
 
 ```sh
-cd cv && pdflatex -interaction=nonstopmode main_<company>_<role>.tex
+cd cv && lualatex -interaction=nonstopmode main_<company>_<role>.tex
+cd cover_letters && xelatex -interaction=nonstopmode cover_<company>_<role>.tex
 ```
 
 Then verify with `tools/verify_pdf.py` (uses pypdf, falls back to Poppler's `pdfinfo`/

@@ -20,3 +20,4 @@ To prevent duplication and configuration drift across different AI agent framewo
 4. **OpenAI-Endpoint Agent Port (RikkaHub Agent):**
    - [RIKKAHUB.md](RIKKAHUB.md) is the environment canon for OpenAI-style function-calling agent harnesses: the tool-name glossary, sub-agent mapping, web-research escalation, Bun/LaTeX runtime notes, and scheduling guidance.
    - [rikkahub-skills/](rikkahub-skills/) contains one thin-pointer skill per command (setup, scrape, rank, apply, upskill, interview, outcome, html-report, expand, gmail-sync, notion-sync, add-portal, add-template, reset). Each is installed into the agent's skill registry and points back at the canonical `.claude/commands/` spec — no workflow logic is duplicated.
+   - [RIKKAHUB-GUIDE.md](RIKKAHUB-GUIDE.md) is the end-user guide for running the workspace from RikkaHub Agent (setup, daily flow, scheduling, privacy).
