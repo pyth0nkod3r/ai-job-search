@@ -8,8 +8,8 @@ For the technical canon see [RIKKAHUB.md](RIKKAHUB.md); for the upstream templat
 
 ## 1. What you get
 
-Talk to your phone's assistant in plain language and it runs the whole application
-pipeline for you:
+Tell your phone's assistant to handle your job search and it runs the whole pipeline
+in **default-autonomy mode**:
 
 - **Find jobs** — portal-search CLIs scrape job boards matching your profile, deduplicated
   across runs.
@@ -19,14 +19,34 @@ pipeline for you:
   a cover letter, has a second agent review the drafts, compiles both PDFs, and archives
   everything. It never submits anything for you — the last click is always yours.
 - **Prepare** — interview prep, skill-gap analysis with a learning plan, outcome tracking.
+- **Run unattended** — daily 9am scrape + rank, weekly dashboard digest, whatever schedule
+  you set. The agent handles the loop and reports back when you're back in the app.
+
+**What the agent does without asking** (default-autonomy mode):
+
+- Runs scrape, rank, draft, review, compile, archive end-to-end
+- Writes confirmed profile facts back to the profile files (Standing Rule in `apply.md`)
+- Updates the tracker when you give an outcome
+- Picks up new portal skills from your market file's source fork (after a one-time
+  code review and per-portal approval during the first `/set-market` run)
+- Schedules recurring work you ask for
+
+**What always asks you** (irreversible boundaries):
+
+- Submitting / sending anything to a third party
+- Pushing commits to a public remote with profile data
+- Anything destructive (delete, force-push, mass overwrite of profile files)
+- Anything involving a paid third-party service (Adzuna key, Firecrawl key)
 
 ## 2. One-time setup
 
 ### 2.1 Tool toggles (Settings → your assistant)
 
 Turn **on**: workspace/shell, file read/write, web fetch & extract, browser, sub-agents,
-ask user. Leave anything destructive un-allowed; the assistant will confirm before such
-actions anyway.
+ask user, schedule jobs. The agent pre-approves a sensible allowlist (read-only shell
+verbs, file writes under `cv/`/`cover_letters/`/`documents/`, local git commits) so
+autonomy is unblocked. It always confirms before destructive actions (delete, force-push,
+profile overwrite, public remote push).
 
 ### 2.2 Install the skills
 
@@ -131,7 +151,12 @@ The tracker (`job_search_tracker.csv`) is the single source of status. See the f
 
 Say: *"schedule a job scrape every weekday at 9am and rank whatever's new"* — the
 assistant creates a scheduled job that runs the scrape + rank workflow unattended and
-reports back. Same pattern works for weekly dashboard reviews.
+reports back. Same pattern works for weekly dashboard reviews, periodic upskill
+re-analysis after your tracker changes, or morning-briefing-style digests.
+
+For pre-baked recurring work (no LLM, no tokens), ask for it explicitly: *"every 6
+hours, dump the tracker status"*. The agent uses `mode: direct` for those — cheaper
+and faster, but the action is fixed.
 
 ### Choose your country/market
 

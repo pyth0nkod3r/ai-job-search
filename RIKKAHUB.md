@@ -36,6 +36,41 @@ in each skill's frontmatter `description` are what routes a plain-language reque
 
 ---
 
+## Operating posture: default autonomy
+
+This workspace runs in **default-autonomy mode** — the agent does the whole pipeline
+end-to-end without asking at each step. Human touchpoints are limited to the boundaries
+where mistakes are costly, irreversible, or visible to third parties:
+
+| Step | Who does it | Why |
+|---|---|---|
+| Choose market, set up profile, run first scrape, set schedule | Human (one-time) | High-stakes irreversible choices (locale, identity, public forks) |
+| Daily scrape, rank, shortlist | Agent | Reading public data, dedup against history |
+| Apply: evaluate fit, draft CV, write cover letter, review, compile PDF, archive posting | Agent | Drafts the agent knows are recoverable until you ship them |
+| **Apply: actually submit / send** | **Human** | The one truly irreversible touch — submits to a third party, can't unsend an email |
+| Update profile with confirmed facts ("I shipped X at Y", "I have a certification in Z") | Human, then agent writes it back | The Standing Rule in `apply.md` is non-negotiable: facts must reach the profile files, not just live in chat |
+| Outcome records, interview prep, dashboard generation | Agent | Refers only to the tracker and your docs |
+
+The agent still pauses and asks `ask_user` for the **first** call in each irreversible
+category above (submit, profile writes) so the standing rule is visible. After that,
+matching patterns run without re-asking.
+
+For autonomy beyond a single turn (e.g. "scrape every weekday at 9am, rank what
+arrives, archive what I ignore"), the agent uses `schedule_job` so the loop runs
+unattended and reports back when the user is back in the app.
+
+**What autonomy does NOT do:**
+
+- It does not submit applications, send emails, or contact anyone on the user's behalf.
+- It does not edit the candidate profile silently — confirmed facts are written back
+  to disk by name (`CLAUDE.md`, `01-candidate-profile.md`), never to chat only.
+- It does not push commits to a public remote with profile data. Privacy guardrails
+  in `/setup` are still enforced.
+- It does not pay for metered third-party services (Firecrawl, Adzuna) without an
+  explicit user-supplied key in env.
+
+---
+
 ## Tool enablement checklist
 
 Before running any workflow, confirm these capabilities are on in the harness (RikkaHub
@@ -48,11 +83,17 @@ say so, don't fake it:
 - **In-app browser** — needed only when a posting 403s or is JS-rendered.
 - **Sub-agents** (`subagent_dispatch`) — required by `/rank` batch scoring and `/apply`'s
   reviewer pass. If disabled, fall back to doing those passes inline in the main context.
-- **Ask user** (`ask_user`) — required by `/setup` and every confirm-gate.
+- **Schedule jobs** (`schedule_job`) — required for any autonomy beyond a single turn
+  (recurring scrape, daily digest, etc.). Falls back to "run on demand" if disabled.
+- **Ask user** (`ask_user`) — used at irreversible boundaries, not at every step.
 
-Prefer pre-approving read-only shell verbs (`bun run`, `python3 salary_lookup.py`,
-`pdftotext`, `pdfinfo`, `pdflatex`, `lualatex`, `xelatex`, `git status`/`diff`/`log`);
-confirm before anything destructive (deleting files, force-push, mass overwrite).
+Pre-approve read-only and recoverable shell verbs so autonomy is unblocked:
+- read: `bun run`, `python3 salary_lookup.py`, `pdftotext`, `pdfinfo`, `pdflatex`,
+  `lualatex`, `xelatex`, `git status`/`diff`/`log`, `bun install`, `find`, `grep`
+- recoverable writes: `git add`/`commit` to a local branch, file writes under
+  `cv/`, `cover_letters/`, `documents/`, `job_scraper/`, `job_search_tracker.csv`
+- destructive (always confirm): `git push --force`, `rm -rf`, mass overwrite of
+  profile files, anything that touches a public remote
 
 ## Sub-agents
 
@@ -110,12 +151,24 @@ Step 5 is non-skippable.
 
 ## Scheduling & autonomy
 
-- Daily/weekly `/scrape` runs map to a scheduled job (`schedule_job`, mode `llm`) whose
-  prompt says: load the `scrape` skill and run the canonical workflow in
-  `.claude/commands/scrape.md` from `/workspace/ai-job-search`.
-- `/outcome` reminders and tracker reviews can be scheduled the same way.
-- Nothing is ever auto-submitted. The last touch (submitting an application, sending an
-  email) is always human.
+The workspace runs in **default-autonomy mode** (see `RIKKAHUB.md`). The agent handles
+the full pipeline: scrape, dedup, rank, draft, review, compile, archive. The only
+human touchpoints are irreversible ones — submitting, profile writes the user hasn't
+asked for, public pushes. Recurring work is handled by `schedule_job` so the loop runs
+unattended and reports back when the user is back in the app.
+
+For autonomy beyond a single turn (e.g. *"scrape every weekday at 9am, rank what
+arrives, archive what I ignore"*), the agent creates a `schedule_job` whose prompt
+loads the `scrape`/`rank` skills and runs the canonical workflows from
+`/workspace/ai-job-search`. Reporting modes:
+
+- `mode: llm` (default for reasoning) — the agent runs the workflow and summarizes
+  the result. Token cost per fire.
+- `mode: direct` (for fixed work) — pre-baked action sequence, no model. Use for
+  "every 6 hours, dump the tracker status" or "every hour, run the health check".
+
+Nothing is ever auto-submitted. The last touch (submitting an application, sending an
+email) is always human.
 
 ## Privacy
 
