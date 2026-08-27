@@ -1,0 +1,17 @@
+{
+  "name": "xing-search",
+  "version": "1.0.0",
+  "description": "CLI for XING job search (DACH). Self-contained, runs with bare bun. Personal use only per XING's robots.txt posture; see SKILL.md.",
+  "type": "module",
+  "private": true,
+  "main": "src/cli.ts",
+  "scripts": {
+    "test": "bun test tests/"
+  },
+  "bin": {
+    "xing-search": "src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
