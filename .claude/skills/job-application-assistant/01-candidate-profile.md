@@ -149,7 +149,7 @@ framework_version: 1.1.1
 | Microsoft Certified: Azure Data Fundamentals (DP-900) | Microsoft (via Certiport) | TBD | Transcript: Certiport |
 | Microsoft Certified: Azure AI Fundamentals (AI-900) | Microsoft (via Certiport) | TBD | Transcript: Certiport |
 | Python for Everybody Specialization | University of Michigan / Coursera | TBD | Project: data retrieval, processing, visualization; specialization id V26M93X6SWC7 |
-| Member, SUPA (Senior Upward Progression in Administration) | Chartered Institute of Project Managers of Nigeria (CIPMN) | TBD | Membership No. SUPA/NO.08972 |
+| **Skill-Up Artisans (SUPA)** — Federal registration | Industrial Training Fund (ITF), Nigeria | TBD | Registration No. SUPA/NO.08972 — Nigerian federal artisan-skills programme (ITF) |
 
 ## Awards
 - None recorded at this time.

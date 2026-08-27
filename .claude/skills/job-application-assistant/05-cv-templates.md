@@ -72,6 +72,11 @@ prompt-to-X work directly.
 
 - **Certifications section**: include when the posting's domain touches cloud, data, or
   project management. Omit when irrelevant to the role.
+- **SUPA / ITF registration line**: list separately from the technical certifications
+  (DP-900, AI-900, Python for Everybody). SUPA is the Industrial Training Fund's
+  Skill-Up Artisans programme in Nigeria — a federal artisan-skills registration, not a
+  technical certification. Frame as evidence of continuous learning and a federally
+  registered professional profile in Nigeria, never as a project-management credential.
 - **Engineering & Tools (Niche) block**: include for hardware-adjacent, telecom, NDT,
   energy, oil & gas, infrastructure roles. Omit for pure consumer-product software
   roles where the UTG / P&ID line reads as noise.
