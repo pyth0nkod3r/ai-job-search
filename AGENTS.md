@@ -17,3 +17,6 @@ To prevent duplication and configuration drift across different AI agent framewo
    - Do not duplicate these rules or specifications. Treat `.claude/` files as the single source of truth.
 3. **Portal Search Skills:**
    - Job-portal search CLIs live under [.agents/skills/](.agents/skills/) in the portable Agent Skills format (with a `SKILL.md` per portal). Codex and Antigravity discover these automatically; the `/scrape` workflow in [.claude/skills/job-scraper/](.claude/skills/job-scraper/) orchestrates them.
+4. **OpenAI-Endpoint Agent Port (RikkaHub Agent):**
+   - [RIKKAHUB.md](RIKKAHUB.md) is the environment canon for OpenAI-style function-calling agent harnesses: the tool-name glossary, sub-agent mapping, web-research escalation, Bun/LaTeX runtime notes, and scheduling guidance.
+   - [rikkahub-skills/](rikkahub-skills/) contains one thin-pointer skill per command (setup, scrape, rank, apply, upskill, interview, outcome, html-report, expand, gmail-sync, notion-sync, add-portal, add-template, reset). Each is installed into the agent's skill registry and points back at the canonical `.claude/commands/` spec — no workflow logic is duplicated.
