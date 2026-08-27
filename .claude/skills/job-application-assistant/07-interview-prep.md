@@ -1,113 +1,132 @@
 ---
-framework_version: 1.0.0
+framework_version: 1.2.6
 ---
 
-# Interview Preparation Guide
+# Interview Prep
 
-<!-- SETUP: STAR examples are personalized by running /setup based on your actual experience -->
+## STAR Candidates (Complete Manually)
 
-## STAR Format
+The candidate should fill in the S/T/A/R for each before using in interviews. The
+situation, task, and result skeleton below is grounded in profile data; the candidate
+owns the specific numbers, dates, and details.
 
-Structure answers as: **Situation** (context), **Task** (your responsibility), **Action** (what you did), **Result** (outcome).
+### 1. Cube-OS Agentic App Builder (Egoras) — agentic AI product work
 
-Keep answers to 1-2 minutes. Be specific. End with what you learned or would do differently.
+- **Source:** Egoras freelance role, 2026, current
+- **What happened:** Built the backend of a prompt-to-app agent inside the cube-os
+  fintech product — the agent takes a user's natural-language request and ships a
+  working Next.js app (full-stack or single-side). Also built the frontend interface
+  for the app builder.
+- **Why it matters:** STARTER for "tell me about an AI/agent project you built", "describe
+  a feature you owned end-to-end", "how do you integrate AI into a product?".
+- **S/T/A/R stub:**
+  - Situation: cube-os needed a way for users to generate a working web app from a prompt,
+    on top of the existing fintech product surface.
+  - Task: Owned the implementation — both the agent's backend and the user-facing
+    interface — without a senior engineer hand-holding.
+  - Action: Built the Next.js prompt-to-app agent end-to-end and shipped it inside the
+    product. (Candidate to add: how the prompt was structured, how output was validated,
+    how the model was chosen, what the iteration cycle looked like.)
+  - Result: (Candidate to add: how many apps built, what user feedback landed, what
+    shipped downstream.)
 
-## Ready-Made STAR Examples
+### 2. GFA Bundle Cut (africacreativemarketglobal.com) — performance engineering
 
-<!-- These are populated by /setup from your actual experience. Below are templates showing the format. -->
+- **Source:** GFA Technologies, 2025 onward
+- **What happened:** Cut the JS bundle size by over 80% on africacreativemarketglobal.com
+  and acmhackathon.com by decoupling image assets from the JS bundle, converting PNG to
+  WebP, and adding lazy-loading.
+- **Why it matters:** STARTER for "describe a performance win", "tell me about a
+  measurable improvement you shipped", "frontend optimization".
+- **S/T/A/R stub:**
+  - Situation: The client site shipped with a heavy JS bundle dominated by image
+    references, hurting time-to-interactive and Lighthouse scores.
+  - Task: Reduce bundle size and improve perceived load time.
+  - Action: Decoupled image assets out of the JS bundle, converted PNG assets to WebP,
+    added route-level lazy-loading. (Candidate to add: before/after Lighthouse numbers,
+    before/after bundle size in KB, before/after TTI / TBT if measured.)
+  - Result: 80%+ bundle size reduction. (Candidate to add: Lighthouse score change,
+    user-facing metric change, any business impact.)
 
-### 1. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT - what was happening, what was the problem]
-**T:** [YOUR RESPONSIBILITY - what you specifically needed to do]
-**A:** [WHAT YOU DID - specific actions, tools, methods]
-**R:** [OUTCOME - measurable results, adoption, impact]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 3. Egoras API Integration — collaborative testing
 
-### 2. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+- **Source:** Egoras freelance role, 2026
+- **What happened:** During the cube-os frontend↔backend integration, validated released
+  endpoints against the frontend to confirm every expected form field was captured and
+  accurately processed before reaching the database. Surfaced mismatches to the backend
+  developer.
+- **Why it matters:** STARTER for "describe a time you caught a bug before it shipped",
+  "how do you work with backend engineers", "describe a cross-functional collaboration".
+- **S/T/A/R stub:**
+  - Situation: cube-os's frontend design specified a set of form fields; the backend
+    implementation was being developed in parallel by another engineer.
+  - Task: Catch field-mapping bugs before they hit the database.
+  - Action: Tested each released endpoint against the frontend contract; surfaced
+    mismatches with the backend developer before integration was finalized. (Candidate
+    to add: how many endpoints, how many rounds of iteration, what tooling.)
+  - Result: (Candidate to add: bugs caught, rework avoided, integration velocity gain.)
 
-### 3. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### 4. Field Service Engineering at MP Infrastructure — systems / operations
 
-<!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
+- **Source:** MP Infrastructure Limited, 2024-2025
+- **What happened:** Installed, maintained, troubleshot, and repaired passive telecom
+  equipment at base transmission stations. Ran planned preventive maintenance across
+  the BTS portfolio.
+- **Why it matters:** STARTER for "describe field experience", "how do you handle
+  operational pressure", "tell me about a time you diagnosed a problem under time
+  pressure".
+- **S/T/A/R stub:**
+  - Situation: (Candidate to add.)
+  - Task: (Candidate to add.)
+  - Action: (Candidate to add: specific BTS, specific issue, specific fix.)
+  - Result: (Candidate to add: uptime outcome, escalation count, time-to-repair.)
 
-## Common Tough Questions
+### 5. Interview Platform — full-stack ownership
 
-### "Why did you leave [previous company]?"
-> [PREPARE YOUR ANSWER - be honest, forward-looking, no negativity about former employer]
+- **Source:** Independent project, 2024-2025 (live at
+  https://interview-platform-f5n3.onrender.com/)
+- **What happened:** Built a real-time coding interview platform end-to-end: user
+  registration, session-link joining, interactive code editor with syntax highlighting,
+  live video streaming, live chat, and a results panel for coding-test output.
+  Interviewer-side controls: generate sessions, toggle live video, deactivate user
+  editor, observe candidate code in real time.
+- **Why it matters:** STARTER for "describe an end-to-end project you owned",
+  "tell me about a real-time application you built", "have you shipped something
+  with WebRTC / live collaboration?".
+- **S/T/A/R stub:**
+  - Situation: (Candidate to add: what problem this solved for you or for users.)
+  - Task: (Candidate to add: scope of the build, the hardest part.)
+  - Action: (Candidate to add: stack choices, what was hard, what you'd do differently.)
+  - Result: (Candidate to add: users, usage, any interviews actually conducted on it.)
 
-### "You don't have [specific skill/experience]."
-> [PREPARE YOUR ANSWER - acknowledge the gap, bridge to adjacent experience, show willingness to learn]
+## Common Interview Questions — Quick Answers (grounded in profile)
 
-### "Where do you see yourself in 5 years?"
-> [PREPARE YOUR ANSWER - show ambition aligned with the role's growth path]
+> "Why are you looking to leave your current role?"
+Open to offers because I'm looking for a role with more scope and a stronger AI/agentic
+product surface. The cube-os app builder at Egoras is the kind of work I want to do more
+of, and the right full-time role will let me focus there.
 
-### "What's your biggest weakness?"
-> [PREPARE YOUR ANSWER - genuine weakness with concrete mitigation strategy]
+> "Tell me about a time you worked across disciplines."
+BEng in Electronic and Computer Engineering → NDT inspection on pipelines → telecom BTS
+field engineering → full-stack software → agentic AI product work. The through-line is
+"end-to-end ownership with systems thinking" — software that has to interact with the
+physical world, or with users, in a way you can ship and see.
 
-### "Why this company specifically?"
-> Customize per company. Must reference: specific projects, company values, market position, or team structure. Never give a generic answer.
+> "What's the biggest technical win on your CV?"
+Cutting a client's JS bundle by 80%+ on africacreativemarketglobal.com — three concrete
+moves (asset decoupling, PNG→WebP, lazy-loading) with a measured before/after.
 
-## Questions You Should Ask Interviewers
+> "Where do you see yourself in 3-5 years?"
+In a role with more scope — technical lead, founding engineer, or product engineer with
+end-to-end ownership — at a company that values full-stack generalists and is building
+something at the intersection of AI and a real product surface.
 
-### About the Role
-- "What does a typical week look like in this role?"
-- "What would success look like in the first 6 months?"
-- "What's the biggest challenge the team is facing right now?"
+> "Why are you willing to relocate?"
+Early career, no dependents tied to a specific city, and the strongest opportunities for
+this kind of profile are in markets outside Nigeria. Port Harcourt is home but not the
+limit.
 
-### About the Team
-- "How big is the team, and how do you divide work?"
-- "What does the development/project lifecycle look like, from idea to production?"
-- "How do you onboard new team members?"
+## Calibration From Past Applications
 
-### About Tech & Growth
-- "What's your current tech stack for [relevant area]?"
-- "Is there room to grow into more architectural or strategic decisions?"
-- "How does the team stay current with new tools and methods?"
-
-### About Culture (use these to prevent disappointment)
-- "How would you describe the team culture?"
-- "What does professional development look like here?"
-- "Is there flexibility for remote/hybrid work?"
-- "What's the balance between development/new projects and maintenance work?"
-- "How would you describe the leadership style in this team?"
-- "What do people who thrive here have in common?"
-
-## Phone/Video Interview Tips
-- Have STAR examples written out (use this file)
-- Keep a glass of water nearby
-- Smile when speaking (it changes your tone)
-- Ask for clarification if a question is vague
-- It's OK to take 5 seconds to think before answering
-- End with: "Is there anything else you'd like to know about my background?"
-
-## After the Application (Best Practice)
-
-### Follow-Up Etiquette
-- **Don't call to "stand out"** or to learn more about the role post-submission - this risks a negative impression
-- If the employer specified a timeline, respect it and wait
-- If no timeline was given and significant time has passed (2+ weeks), a brief call to ask about status is acceptable
-- If you have genuinely new, relevant information to share, a short follow-up is fine
-
-### Thank-You Notes
-- When you receive any update (interview invitation, rejection, or status update), send a brief thank-you message
-- Express appreciation for their time and the process
-- Keep it short (2-3 sentences)
-
-## Roleplay Guidelines
-When the user asks for interview practice:
-1. Ask which role/company to simulate
-2. Start with easy warm-up questions ("Tell me about yourself")
-3. Progress to role-specific technical questions
-4. Include 1-2 behavioral questions using the competencies from the job posting
-5. End with a tough question or curveball
-6. After each answer, give brief feedback: what worked, what to sharpen
-7. Suggest which STAR example would work best for each question
+- No prior applications in `documents/applications/`. Calibration will populate after the
+  first `/outcome` records land.

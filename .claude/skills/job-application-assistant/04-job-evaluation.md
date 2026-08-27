@@ -60,9 +60,11 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** React, Next.js, JavaScript, HTML/CSS (Tailwind, Bootstrap), Python, Django/DRF, REST API integration, MySQL/PostgreSQL, Git/GitHub, Docker, CI/CD, full-stack end-to-end project ownership, agentic AI application building (Next.js, prompt-to-app), UI/UX implementation.
+
+**Moderate match areas:** Streamlit, Kestra/Airflow, Microsoft Azure / AWS, OOP, SQL/T-SQL, Linux/WSL, Coolify, GitHub Actions pipelines.
+
+**Weak match areas:** Java/Kotlin/Swift mobile native, deep ML modelling, AWS Solutions Architect–level infra, formal security clearance, professional-level Spanish or German (A1 only).
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
@@ -74,9 +76,11 @@ Does work history align with what they're looking for? Match on the function and
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Full-stack web engineering (React/Next.js, Django/DRF), agentic AI product development (prompt-to-app builders), end-to-end product ownership (Eka Legal, Interview Platform, Egoras cube-os), UI/UX implementation for client-facing apps, performance engineering (80% JS bundle cut at GFA).
+
+**Moderate:** Frontend-only roles in larger product teams (would need to make the case for full-stack range), early-career AI engineering roles where the candidate would lead the implementation, embedded/IoT adjacent roles leveraging the BEng + NDT field history.
+
+**Entry-level:** Senior platform / infrastructure roles requiring years of single-stack experience, staff/principal engineering, formal team-lead roles (no direct reports in the data), mobile native (iOS/Android).
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -106,20 +110,20 @@ Does this role advance career goals and contain tasks that energize?
 | 40-59 | Decent job but doesn't build toward career goals |
 | 0-39 | Dead end or backwards step |
 
-**Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+**Career goals (inferred from project pattern, not stated):**
+- Build software that combines a clear product surface with some systems / hardware / AI depth.
+- Move from "early-career contributor who builds the whole stack" toward a role with more scope (technical lead, founding engineer, or product engineer with end-to-end ownership).
+- Establish in a market that values full-stack generalists with evidence of shipping (UK, US, Germany, pan-African hub, or remote-first).
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: shipping end-to-end product surfaces, AI / agentic features with real users, performance work with measurable wins, working across disciplines (software + hardware/field).
+- Tasks that drain: pure maintenance, long on-site commitments with no remote flexibility, process-heavy environments with no shipping target, single-stack roles the candidate would have to over-claim.
+- Non-task factors: degree of ownership, written culture (the candidate works remote well), team size (small/mid probably fits better than a 200-engineer org where they would be one of many).
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security:** Open to offers; willing to relocate. Compensation target not yet recorded.
+- **Flexibility:** Willing to relocate; remote-or-on-site open; GFA work has been run in parallel with on-site roles (proven async discipline).
+- **Professional development:** Building toward a role with more scope; agentic-AI product work is the current focus.
 
 ### 6. Salary Benchmark (Optional)
 

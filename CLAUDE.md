@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Miracle Anyanwu
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for **Miracle Anyanwu**, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,79 +10,106 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
+- **Name:** Miracle Anyanwu
+- **Location:** Port Harcourt, Rivers, Nigeria (willing to relocate; open to remote or on-site)
+- **Phone:** +2347034323113
+- **Email:** mac.mkboy1@gmail.com
+- **LinkedIn:** https://linkedin.com/in/macmkboy
+- **GitHub:** https://github.com/pyth0nkod3r
+- **Status:** Open to offers
+- **Constraints:** Willing to relocate
+- **CV language:** English (default; switch via `/setup --section search`)
+
 - **Languages:**
   | Language | Level |
   |----------|-------|
-  | [LANGUAGE] | [LEVEL] |
-  <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
-  working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
-  undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
-  lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
-  04-job-evaluation.md's Language Gate. -->
-- **CV language:** [YOUR_CV_LANGUAGE] <!-- English unless your market expects otherwise; /setup asks -->
-
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+  | English | Native |
+  | Spanish | A1 (Beginner) |
+  | German | A1 (Beginner) |
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **BEng in Electronic and Computer Engineering** (final-year project 2018) - Nnamdi Azikiwe University, Awka, Anambra, Nigeria
+  - Thesis: "Sensor-Based Smart Navigation Spectacles for Visually-Impaired Persons"
+  - Topics: Embedded systems, sensor integration, signal processing, ultrasonic sensing, network infrastructure
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Frontend Developer (Freelance Contract)** (Jan 2026 - Present) - **Egoras Technologies Ltd** (Port Harcourt, Rivers, NG)
+  - API testing and integration for the company's fintech product; validate released endpoints against the frontend to confirm every expected form field is captured and accurately processed before reaching the database.
+  - UI/UX development and improvement for the fintech platform.
+  - **Agentic AI (cube-os):** built the backend of a prompt-to-web-app agent that takes a natural-language request and ships a working Next.js application (full-stack or single-side); also built the frontend interface for the app builder; integrated into the existing cube-os product.
+
+- **Frontend Web Developer (part-time / contract)** (Jan 2025 - Present) - **GFA Technologies** (Remote - Abeokuta, Ogun, NG)
+  - Frontend engineering inside GFA's software agency, building interfaces for GFA clients. Run in parallel with on-site field engineering.
+  - **Performance work (africacreativemarketglobal.com, acmhackathon.com):** cut JS bundle size by 80%+ by decoupling image assets from the bundle, converting PNG to WebP, and adding lazy-loading; also contributed to feature development on these products.
+  - Delivered modern, responsive, semantically-structured web applications following agile methodologies.
+
+- **Frontend Developer Intern** (Oct 2024 - Dec 2024) - **Sand Technologies / ALX Ventures Partnership** (Remote - San Francisco, CA, USA)
+  - Collaborated with the frontend team to design and deliver a modern, responsive marketing site for Foovante Global.
+
+- **Field Service Specialist Engineer** (Aug 2024 - Aug 2025) - **MP Infrastructure Limited** (On-site - Aba, Abia, NG)
+  - Installed, maintained, troubleshot and repaired passive telecommunication equipment at designated base transmission stations.
+  - Carried out planned preventive maintenance (PPM) on passive telecom equipment across the BTS portfolio.
+
+- **Ultrasonic Testing Technician** (Feb 2023 - Jun 2023) - **Montego Upstream Services** (On-site - Eleme, Rivers, NG)
+  - Conducted ultrasonic inspection tests on pipelines of varying thicknesses to quantify wall-thickness loss and corrosion extent.
+  - Interpreted P&IDs and produced isometric sketches of tested pipelines to support inspection reporting.
+
+- **Network Engineering Intern** (Apr 2018 - Nov 2018) - **Nnamdi Azikiwe University** (On-site - Awka, Anambra, NG)
+  - Assisted the campus network engineering team with design, implementation, installation, configuration, maintenance and troubleshooting of university network infrastructure and the Eduroam service.
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** JavaScript / TypeScript, React, Next.js, Python, Django / DRF, HTML / CSS (Tailwind, Bootstrap), REST API integration, MySQL / PostgreSQL
+- **Secondary:** Docker, GitHub Actions (CI/CD), Kestra, Airflow, Streamlit, Microsoft Azure, AWS (foundational), Linux / WSL, Coolify
+- **Domain:** Full-stack web engineering, agentic AI product development, end-to-end product ownership, performance engineering, embedded / sensor systems, telecom BTS, ultrasonic NDT
+- **Software:** Git / GitHub, OOP, SQL / T-SQL, Microsoft Office, agile methodologies
+- **Engineering & Tools (niche):** Olympus Epoch 600 ultrasonic flaw detector, ultrasonic thickness gauge (UTG), Eddyfi Teletest Focus, P&ID interpretation, isometric sketching, magnetic particle testing, digital multimeter, Galooli RMS
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- Microsoft Certified: **Azure Data Fundamentals** (DP-900) - Microsoft (Certiport) - date TBD
+- Microsoft Certified: **Azure AI Fundamentals** (AI-900) - Microsoft (Certiport) - date TBD
+- **Python for Everybody** Specialization - University of Michigan / Coursera - date TBD
+- **Member, SUPA** (Senior Upward Progression in Administration) - Chartered Institute of Project Managers of Nigeria (CIPMN), Membership No. SUPA/NO.08972
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- None recorded at this time.
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- None recorded at this time.
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+*Inferred from work history and project pattern. No formal assessment (PI, DISC, MBTI, StrengthsFinder) recorded.*
+- **Operates across domains without flinching** - moved between ultrasonic NDT, telecom BTS, frontend / full-stack software, network infrastructure, and agentic AI product work in an 8-year window.
+- **Builds end-to-end** - Eka Legal, Interview Platform, agentic Next.js app builder at Egoras, GFA client sites: every major project owned from brief to deployment.
+- **Carries both engineering and software without choosing** - bridge profile, strongest in roles that combine software with physical / embedded / systems context.
+- **Self-funds learning** - Azure DP-900, AI-900, Python for Everybody, ALX Ventures, CIPMN; no employer paid for the most recent cert stack.
+- **Comfortable with async and remote work** - most software roles to date have been remote, often in parallel with on-site engineering.
+- **Open to risk and change** - open to offers + willing to relocate signals the candidate is not looking for the safe 9-5 in Port Harcourt for the rest of the decade.
+- **Strengths:** Learning velocity, end-to-end ownership, cross-discipline comfort, async written communication
+- **Growth areas:** Senior-level depth on any single stack, formal team-lead experience, professional-level Spanish / German
+- **Thrives in:** Small / mid teams with ownership, products with a real shipping target, async / written culture, software + hardware / AI / systems adjacency
+- **Drains in:** Pure maintenance work, single-stack specialist roles, long on-site commitments with no remote flexibility, process-heavy environments with no shipping target
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+*Inferred from project pattern, not stated.*
+- Shipping end-to-end product surfaces
+- AI / agentic features with real users
+- Performance work with measurable wins
+- Working across disciplines (software + hardware / field)
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+*Inferred from project pattern, not stated.*
+- Fintech (Egoras is in fintech)
+- Developer tools (Interview Platform, app builder)
+- Hackathon / event platforms (ACM, AFCFTA, Science of Trade)
+- AI startups with a real product surface
+- Hardware-adjacent software (IoT, sensor products, robotics, infrastructure)
 
 ### Deal-breakers
-<!-- Hard constraints on job search. Language requirements are handled separately and
-automatically from your Languages table above - don't duplicate them here. -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- Roles requiring formal security clearance
+- Roles with explicit citizen / permanent-residency requirements
+- Roles gated on Spanish or German at C1+ (current level A1)
+- Staff / Principal / Lead roles without a clear path to growth
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
