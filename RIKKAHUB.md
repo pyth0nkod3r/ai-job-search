@@ -36,38 +36,54 @@ in each skill's frontmatter `description` are what routes a plain-language reque
 
 ---
 
-## Operating posture: default autonomy
+## Operating posture: ask by default, autonomy on request
 
-This workspace runs in **default-autonomy mode** — the agent does the whole pipeline
-end-to-end without asking at each step. Human touchpoints are limited to the boundaries
-where mistakes are costly, irreversible, or visible to third parties:
+This workspace's default is **ask-at-each-gate** — the agent pauses and confirms at
+every meaningful step so you stay in the loop. There is a one-time **"do everything"**
+toggle that flips it into full-autonomy mode (see below); the agent remembers your
+choice until you change it.
 
-| Step | Who does it | Why |
-|---|---|---|
-| Choose market, set up profile, run first scrape, set schedule | Human (one-time) | High-stakes irreversible choices (locale, identity, public forks) |
-| Daily scrape, rank, shortlist | Agent | Reading public data, dedup against history |
-| Apply: evaluate fit, draft CV, write cover letter, review, compile PDF, archive posting | Agent | Drafts the agent knows are recoverable until you ship them |
-| **Apply: actually submit / send** | **Human** | The one truly irreversible touch — submits to a third party, can't unsend an email |
-| Update profile with confirmed facts ("I shipped X at Y", "I have a certification in Z") | Human, then agent writes it back | The Standing Rule in `apply.md` is non-negotiable: facts must reach the profile files, not just live in chat |
-| Outcome records, interview prep, dashboard generation | Agent | Refers only to the tracker and your docs |
+**Default ask-gates** (the agent pauses for a `ask_user` call here):
 
-The agent still pauses and asks `ask_user` for the **first** call in each irreversible
-category above (submit, profile writes) so the standing rule is visible. After that,
-matching patterns run without re-asking.
+| Step | Why it asks |
+|---|---|
+| Market choice on first setup | Locale, languages, portal selection are sticky and personal |
+| Profile onboarding | Identity and CV language shape every later draft |
+| Scrape focus area / broad / health | How much to run, in what shape |
+| Top-N from the ranked shortlist | You're picking what to invest apply-effort in |
+| Apply: fit evaluation result | Approve before drafting begins |
+| Apply: draft review pass | Approve before compile and archive |
+| Apply: pre-submit summary (if you ask it to draft a message) | One-shot confirm before the agent touches a third party |
+| Profile write-back on confirmed facts | The Standing Rule is non-negotiable; show the diff |
+| Schedule-job creation | What to schedule, when, and at what verbosity |
+| Reset (destructive) | Always confirms per-section |
+
+**Autonomy mode** — a single ask, *"do everything"* or *"autonomous mode on"* (or the
+inverse *"ask me at each step"*) flips a per-assistant toggle recorded in
+`/workspace/ai-job-search/.state/autonomy.json` (created on first use, defaults to
+`"ask"`). While `autonomy` is `"on"`:
+
+- All `ask_user` calls above collapse to a single summary at the end of each workflow.
+- The agent still surfaces results — never silent.
+- A scheduled job (e.g. daily 9am scrape + rank) runs unattended; the `autonomy` toggle
+  determines whether its summary waits for you or auto-posts.
+
+**What the agent NEVER does without per-call confirmation, even in autonomy mode:**
+
+- Submits an application or sends an email
+- Pushes commits to a **public** remote
+- Touches a paid third-party service (Adzuna key, Firecrawl key)
+- Deletes profile data, force-pushes, or mass-overwrites tracked files
+
+Per-call confirmation is enforced at the tool layer (the agent picks up any destructive
+shell verb out of the pre-approve allowlist) — not just at the policy layer — so the
+guarantee holds whether or not autonomy is on.
 
 For autonomy beyond a single turn (e.g. "scrape every weekday at 9am, rank what
 arrives, archive what I ignore"), the agent uses `schedule_job` so the loop runs
-unattended and reports back when the user is back in the app.
-
-**What autonomy does NOT do:**
-
-- It does not submit applications, send emails, or contact anyone on the user's behalf.
-- It does not edit the candidate profile silently — confirmed facts are written back
-  to disk by name (`CLAUDE.md`, `01-candidate-profile.md`), never to chat only.
-- It does not push commits to a public remote with profile data. Privacy guardrails
-  in `/setup` are still enforced.
-- It does not pay for metered third-party services (Firecrawl, Adzuna) without an
-  explicit user-supplied key in env.
+unattended and reports back when the user is back in the app. Scheduled jobs work the
+same under ask-default and autonomy mode — the difference is what happens in the
+single-turn path.
 
 ---
 

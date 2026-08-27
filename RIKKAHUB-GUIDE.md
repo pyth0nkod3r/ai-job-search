@@ -8,30 +8,30 @@ For the technical canon see [RIKKAHUB.md](RIKKAHUB.md); for the upstream templat
 
 ## 1. What you get
 
-Tell your phone's assistant to handle your job search and it runs the whole pipeline
-in **default-autonomy mode**:
+Tell your phone's assistant to handle your job search. The default is **ask-at-each-gate**
+— the agent pauses at every meaningful step so you stay in the loop:
 
 - **Find jobs** — portal-search CLIs scrape job boards matching your profile, deduplicated
-  across runs.
-- **Triage** — every new posting gets a fit score against your profile; you get a ranked
-  shortlist.
-- **Apply** — for a posting you pick, the assistant evaluates fit, tailors your CV, writes
-  a cover letter, has a second agent review the drafts, compiles both PDFs, and archives
-  everything. It never submits anything for you — the last click is always yours.
+  across runs. You'll see what it ran, the candidates, and pick the next move.
+- **Triage** — every new posting gets a fit score against your profile; you pick the
+  shortlist to invest apply-effort in.
+- **Apply** — for a posting you pick, the assistant evaluates fit, asks before drafting,
+  drafts the CV and cover letter, asks before compiling, and shows you the result.
 - **Prepare** — interview prep, skill-gap analysis with a learning plan, outcome tracking.
-- **Run unattended** — daily 9am scrape + rank, weekly dashboard digest, whatever schedule
-  you set. The agent handles the loop and reports back when you're back in the app.
+- **Run unattended** — schedule daily 9am scrape + rank, weekly dashboard digest, or any
+  loop. The agent handles the loop and reports back when you're back in the app.
 
-**What the agent does without asking** (default-autonomy mode):
+**Flipping to full autonomy** — one ask is enough:
 
-- Runs scrape, rank, draft, review, compile, archive end-to-end
-- Writes confirmed profile facts back to the profile files (Standing Rule in `apply.md`)
-- Updates the tracker when you give an outcome
-- Picks up new portal skills from your market file's source fork (after a one-time
-  code review and per-portal approval during the first `/set-market` run)
-- Schedules recurring work you ask for
+> *"do everything"*, *"go autonomous"*, or *"autonomous mode on"*
 
-**What always asks you** (irreversible boundaries):
+The agent records the choice in `.state/autonomy.json` and runs the whole pipeline
+end-to-end without asking at each step. It still surfaces every result, still enforces
+the irreversible boundaries (submit, public pushes, paid services, destructive actions),
+still writes confirmed profile facts back to the files. Flip back with *"ask me at
+each step"*.
+
+**What always asks you** (regardless of mode):
 
 - Submitting / sending anything to a third party
 - Pushing commits to a public remote with profile data
@@ -157,6 +157,10 @@ re-analysis after your tracker changes, or morning-briefing-style digests.
 For pre-baked recurring work (no LLM, no tokens), ask for it explicitly: *"every 6
 hours, dump the tracker status"*. The agent uses `mode: direct` for those — cheaper
 and faster, but the action is fixed.
+
+If you'd rather have the agent not ask at all in the single-turn path too, say
+*"do everything"* once and it remembers. Flip back any time with *"ask me at each
+step"*.
 
 ### Choose your country/market
 
