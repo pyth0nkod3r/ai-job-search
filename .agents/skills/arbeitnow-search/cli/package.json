@@ -1,0 +1,17 @@
+{
+  "name": "arbeitnow-search",
+  "version": "1.0.0",
+  "description": "Bun CLI for the arbeitnow public job board API",
+  "type": "module",
+  "private": true,
+  "main": "src/cli.ts",
+  "scripts": {
+    "test": "bun test tests/"
+  },
+  "bin": {
+    "arbeitnow-search": "src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
