@@ -142,6 +142,16 @@ async function cmdSearch(args: string[]): Promise<number> {
     const resp = await getJson(url.toString());
     if (!resp.data || resp.data.length === 0) break;
     let pageJobs = resp.data;
+    // Post-filter: arbeitnow's `tags` query param is a substring match on the
+    // tags[] array, but a job whose tags contain the substring is returned
+    // even if the substring only matches an unrelated tag. Tighten this
+    // client-side so the caller gets a real tag match, not a near-match.
+    if (flags.tag) {
+      const want = flags.tag.toLowerCase();
+      pageJobs = pageJobs.filter((j) =>
+        (j.tags || []).some((t) => t.toLowerCase() === want),
+      );
+    }
     if (flags.query) {
       const q = flags.query.toLowerCase();
       pageJobs = pageJobs.filter(
