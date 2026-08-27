@@ -31,9 +31,30 @@ actions anyway.
 ### 2.2 Install the skills
 
 The skills in `rikkahub-skills/` are the entry points — each one wraps a canonical
-workflow. Install at least these four first (ask the assistant:
-*"install the skill at /workspace/ai-job-search/rikkahub-skills/setup.md"* — it handles
-the rest, you just approve each one):
+workflow. Two ways to install them:
+
+**Option A — install from the cloned workspace (recommended):**
+
+```sh
+ls /workspace/ai-job-search/rikkahub-skills/   # 15 skills
+```
+
+From chat, install them one at a time:
+
+> *"install the skill at /workspace/ai-job-search/rikkahub-skills/setup.md"*
+
+Each install pops an approval card (source label, skill name). Read the card, approve if
+correct, and the skill is added to your assistant's registry. New skills are auto-enabled
+for the calling assistant.
+
+**Option B — install from a public URL (for non-workspace installs):**
+
+> *"install the skill from https://raw.githubusercontent.com/pyth0nkod3r/ai-job-search/master/rikkahub-skills/apply.md"*
+
+The host is `pyth0nkod3r/ai-job-search` on the `master` branch. Loopback / private IPs
+are rejected for safety, so this only works for public repos.
+
+**Which to install first** (do these four, then the rest when needed):
 
 | Skill | What it does |
 |---|---|
@@ -42,9 +63,10 @@ the rest, you just approve each one):
 | `job-search-rank` | Score & shortlist |
 | `job-search-apply` | The full application workflow |
 
-The other ten (`upskill`, `interview`, `outcome`, `html-report`, `expand`, `gmail-sync`,
-`notion-sync`, `add-portal`, `add-template`, `reset`) can be installed later, when you
-first need them.
+The other eleven (`upskill`, `interview`, `outcome`, `html-report`, `expand`, `gmail-sync`,
+`notion-sync`, `add-portal`, `add-template`, `set-market`, `reset`) can be installed later,
+when you first need them. `set-market` is useful early if you want to pick a non-Danish
+market before scraping.
 
 ### 2.3 Runtimes
 
