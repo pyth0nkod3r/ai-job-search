@@ -30,7 +30,32 @@ owns the specific numbers, dates, and details.
   - Result: (Candidate to add: how many apps built, what user feedback landed, what
     shipped downstream.)
 
-### 2. GFA Bundle Cut (africacreativemarketglobal.com) — performance engineering
+### 2. Podcast Downloader Pipeline — production data engineering
+
+- **Source:** 3MTT × Data Science Nigeria × WesOnline DeepTech Ready Cohort 2 capstone;
+  deployed at macmkboy.dpdns.org; repo at github.com/pyth0nkod3r/podcast-downloader-pipeline
+- **What happened:** Built a production-grade ETL pipeline that fetches, parses, and
+  stores podcast metadata from 450+ RSS feeds across 17 categories every 6 hours, with
+  a live Streamlit dashboard. Self-hosted on Azure B2s (2 vCPU / 4 GB RAM / 50 GB
+  disk), 5 Docker services, Kestra orchestration, Postgres primary + Azure SQL
+  failover, GitHub Actions CI/CD with SMTP failure notifications, self-healing feed
+  handling.
+- **Why it matters:** STARTER for "describe a production system you built and operate",
+  "tell me about a data engineering project you owned end-to-end", "how do you handle
+  failure modes in a deployed system".
+- **S/T/A/R stub:**
+  - Situation: (Candidate to add: why they picked this project; the data engineering
+    program was the framing; the problem of scattered podcast metadata was the
+    motivation.)
+  - Task: Build, deploy, and operate the pipeline solo. (Candidate to add: scope.)
+  - Action: 8 Kestra flows (4 Postgres + 4 Azure SQL) with cross-dialect SQL
+    translation; SQL MERGE for upserts; Streamlit dashboard with KPIs + heatmap;
+    Traefik reverse proxy via Coolify; CI/CD via GitHub Actions; SMTP failure
+    notifications; self-healing auto-disable on broken feeds.
+  - Result: (Candidate to add: how many feeds ingest successfully today, what uptime
+    has been, any user feedback or analytics on the dashboard.)
+
+### 3. GFA Bundle Cut (africacreativemarketglobal.com) — performance engineering
 
 - **Source:** GFA Technologies, 2025 onward
 - **What happened:** Cut the JS bundle size by over 80% on africacreativemarketglobal.com
@@ -48,7 +73,7 @@ owns the specific numbers, dates, and details.
   - Result: 80%+ bundle size reduction. (Candidate to add: Lighthouse score change,
     user-facing metric change, any business impact.)
 
-### 3. Egoras API Integration — collaborative testing
+### 4. Egoras API Integration — collaborative testing
 
 - **Source:** Egoras freelance role, 2026
 - **What happened:** During the cube-os frontend↔backend integration, validated released
@@ -66,7 +91,7 @@ owns the specific numbers, dates, and details.
     to add: how many endpoints, how many rounds of iteration, what tooling.)
   - Result: (Candidate to add: bugs caught, rework avoided, integration velocity gain.)
 
-### 4. Field Service Engineering at MP Infrastructure — systems / operations
+### 5. Field Service Engineering at MP Infrastructure — systems / operations
 
 - **Source:** MP Infrastructure Limited, 2024-2025
 - **What happened:** Installed, maintained, troubleshot, and repaired passive telecom
@@ -81,7 +106,7 @@ owns the specific numbers, dates, and details.
   - Action: (Candidate to add: specific BTS, specific issue, specific fix.)
   - Result: (Candidate to add: uptime outcome, escalation count, time-to-repair.)
 
-### 5. Interview Platform — full-stack ownership
+### 6. Interview Platform — full-stack ownership
 
 - **Source:** Independent project, 2024-2025 (live at
   https://interview-platform-f5n3.onrender.com/)
@@ -99,18 +124,45 @@ owns the specific numbers, dates, and details.
   - Action: (Candidate to add: stack choices, what was hard, what you'd do differently.)
   - Result: (Candidate to add: users, usage, any interviews actually conducted on it.)
 
+### 7. Podcast Pipeline Failover — production incident response
+
+- **Source:** Self-built, observed in the deployment of the Podcast Pipeline.
+- **What happened:** Streamlit queries local Postgres. If Postgres goes down, the
+  Streamlit sidebar warns the user and auto-switches to Azure SQL. The SQL dialect
+  is translated in Python because Postgres and T-SQL differ.
+- **Why it matters:** STARTER for "how do you handle a database failover",
+  "tell me about a reliability problem you solved", "describe a system that degrades
+  gracefully".
+- **S/T/A/R stub:**
+  - Situation: Podcast Pipeline's primary Postgres DB went down; the dashboard would
+    have returned empty / 500 to users.
+  - Task: Keep the dashboard usable during DB outages.
+  - Action: Built an automatic Postgres-to-Azure-SQL fallback inside Streamlit, with a
+    user-facing sidebar warning when the fallback is active. Wrote a Python
+    translator to convert Postgres queries to T-SQL on the fly.
+  - Result: (Candidate to add: an actual outage they rode through with the fallback,
+    how often the fallback has engaged, and what they learned.)
+
 ## Common Interview Questions — Quick Answers (grounded in profile)
 
 > "Why are you looking to leave your current role?"
 Open to offers because I'm looking for a role with more scope and a stronger AI/agentic
-product surface. The cube-os app builder at Egoras is the kind of work I want to do more
-of, and the right full-time role will let me focus there.
+or data engineering product surface. The cube-os app builder at Egoras and the Podcast
+Downloader Pipeline are the kinds of work I want to do more of, and the right full-time
+role will let me focus there.
 
 > "Tell me about a time you worked across disciplines."
-BEng in Electronic and Computer Engineering → NDT inspection on pipelines → telecom BTS
-field engineering → full-stack software → agentic AI product work. The through-line is
-"end-to-end ownership with systems thinking" — software that has to interact with the
-physical world, or with users, in a way you can ship and see.
+BEng in Electronic and Computer Engineering → NDT inspection on pipelines (ASNT
+Level II) → telecom BTS field engineering → full-stack software → data engineering
+(Podcast Pipeline) → agentic AI product work. The through-line is "end-to-end
+ownership with systems thinking" — software that has to interact with the physical
+world, or with users, in a way you can ship and see.
+
+> "Tell me about a production system you built and operate solo."
+The Podcast Downloader Pipeline: 5 Docker services on an Azure VM, Kestra orchestration,
+Postgres + Azure SQL failover, GitHub Actions CI/CD with SMTP failure notifications,
+Streamlit dashboard at macmkboy.dpdns.org. Self-healing feed handling on broken RSS
+sources. (See STAR #2.)
 
 > "What's the biggest technical win on your CV?"
 Cutting a client's JS bundle by 80%+ on africacreativemarketglobal.com — three concrete
@@ -125,6 +177,12 @@ something at the intersection of AI and a real product surface.
 Early career, no dependents tied to a specific city, and the strongest opportunities for
 this kind of profile are in markets outside Nigeria. Port Harcourt is home but not the
 limit.
+
+> "What are you learning right now?"
+Per the Portfolio: Data Engineering (just completed 3MTT DeepTech Ready, still
+deepening on distributed systems), Backend Architecture (microservices, caching,
+scaling), DevOps & Cloud (Kubernetes, Terraform, real CI/CD at scale), AI & Automation
+(building on the cube-os agent work and the AI DevTools Zoomcamp).
 
 ## Calibration From Past Applications
 

@@ -60,11 +60,17 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** React, Next.js, JavaScript, HTML/CSS (Tailwind, Bootstrap), Python, Django/DRF, REST API integration, MySQL/PostgreSQL, Git/GitHub, Docker, CI/CD, full-stack end-to-end project ownership, agentic AI application building (Next.js, prompt-to-app), UI/UX implementation.
+**Strong match areas:** React, Next.js, JavaScript, HTML/CSS (Tailwind, Bootstrap), Python, Django/DRF, REST API integration, MySQL/PostgreSQL, Git/GitHub, Docker (production-grade, 5-service Azure-VM deployment), GitHub Actions CI/CD, Kestra (chose over Airflow in production), Streamlit (production dashboard), Microsoft Azure (DP-900 + AI-900, Azure VM and Azure SQL failover), cross-dialect SQL translation (Postgres ↔ T-SQL), full-stack end-to-end project ownership, agentic AI application building (Next.js, prompt-to-app), UI/UX implementation, performance engineering (80% JS bundle cut at GFA).
 
-**Moderate match areas:** Streamlit, Kestra/Airflow, Microsoft Azure / AWS, OOP, SQL/T-SQL, Linux/WSL, Coolify, GitHub Actions pipelines.
+**Moderate match areas:** Backend architecture (Django REST, but the candidate is honest about wanting to grow into microservices / caching / scaling), Cloud-native infra (Coolify, Traefik, Kestra), AI tooling (AI DevTools Zoomcamp — agents, MCP, automation; production-built agent at Egoras), data engineering (production pipeline + Streamlit dashboard, but the candidate is honest about still growing on distributed systems).
 
-**Weak match areas:** Java/Kotlin/Swift mobile native, deep ML modelling, AWS Solutions Architect–level infra, formal security clearance, professional-level Spanish or German (A1 only).
+**Weak match areas:** Java/Kotlin/Swift mobile native, deep ML modelling, AWS Solutions Architect–level infra, formal security clearance, professional-level Spanish or German (A1 only), staff/principal engineering or formal team-lead experience (no direct reports in the data).
+
+**Strong:** Full-stack web engineering (React/Next.js, Django/DRF), agentic AI product development (prompt-to-app builders), end-to-end product ownership (Eka Legal, Interview Platform, Egoras cube-os), UI/UX implementation for client-facing apps, performance engineering (80% JS bundle cut at GFA), production data engineering (Podcast Downloader Pipeline — 5-service Docker stack on Azure VM, Kestra orchestration, Postgres + Azure SQL failover, Streamlit dashboard).
+
+**Moderate:** Backend roles at scale (the candidate has Django REST + Meta Backend track, but is honest about wanting to deepen on microservices / caching / scaling), DevOps / SRE roles (Coolify, Traefik, GitHub Actions in production, but Kubernetes / Terraform not yet in the data), mobile native (no signal), security engineering (DP-900 + AI-900 only, no security-focused certs).
+
+**Entry-level:** Senior platform / infrastructure roles requiring years of single-stack experience, staff/principal engineering, formal team-lead roles (no direct reports in the data), deep ML research roles (no formal ML training).
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
