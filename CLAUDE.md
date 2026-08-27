@@ -69,7 +69,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - Microsoft Certified: **Azure Data Fundamentals** (DP-900) - Microsoft (Certiport) - date TBD
 - Microsoft Certified: **Azure AI Fundamentals** (AI-900) - Microsoft (Certiport) - date TBD
 - **Python for Everybody** Specialization - University of Michigan / Coursera - date TBD
-- **Federal registration — Skill-Up Artisans (SUPA)**, Industrial Training Fund (ITF), Nigeria — Registration No. SUPA/NO.08972 (Nigerian federal artisan-skills programme)
+- **Project Management certification (CIPMN, via ITF's SUPA programme)** - Chartered Institute of Project Managers of Nigeria (CIPMN), issued through the Industrial Training Fund's Skill-Up Artisans (SUPA) programme, which included project management among its courses - Registration No. SUPA/NO.08972 - date TBD
 
 ### Publications
 - None recorded at this time.

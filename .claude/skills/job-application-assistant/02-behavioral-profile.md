@@ -23,8 +23,9 @@ framework_version: 1.1.1
   not a specialist profile. Strongest when roles say "full-stack with hardware exposure" or
   "software engineer who can talk to the field".
 - **Self-funds learning.** Azure DP-900, AI-900, Python for Everybody specialization, ALX
-  Ventures program, federal ITF/SUPA registration. No employer paid for the most recent
-  cert stack. Suggests discipline and a high internal drive to upskill.
+  Ventures program, CIPMN project management certification (earned via ITF's SUPA
+  programme). No employer paid for the most recent cert stack. Suggests discipline and
+  a high internal drive to upskill.
 - **Comfortable with async and remote work.** Most software roles to date have been remote,
   often run in parallel with on-site engineering. Implies self-direction, written
   communication, and a tolerance for time-zone friction.

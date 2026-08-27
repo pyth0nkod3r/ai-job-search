@@ -72,11 +72,15 @@ prompt-to-X work directly.
 
 - **Certifications section**: include when the posting's domain touches cloud, data, or
   project management. Omit when irrelevant to the role.
-- **SUPA / ITF registration line**: list separately from the technical certifications
-  (DP-900, AI-900, Python for Everybody). SUPA is the Industrial Training Fund's
-  Skill-Up Artisans programme in Nigeria — a federal artisan-skills registration, not a
-  technical certification. Frame as evidence of continuous learning and a federally
-  registered professional profile in Nigeria, never as a project-management credential.
+- **CIPMN / SUPA project management cert**: Issuing body is CIPMN (Chartered Institute
+  of Project Managers of Nigeria). Pathway: ITF's Skill-Up Artisans (SUPA) programme,
+  which included project management among its courses. Cite as
+  "Project Management certification (CIPMN, via ITF's SUPA programme) — Reg. No.
+  SUPA/NO.08972". Do **not** call it a "federal registration" or a "membership" — it
+  is a PM certification earned through SUPA. Do not place it in a separate
+  "Professional Memberships" line; it sits with the other certifications. The CIPMN
+  website is currently suspended, so verify the registration number with the user if
+  a posting requires strict credential-checking.
 - **Engineering & Tools (Niche) block**: include for hardware-adjacent, telecom, NDT,
   energy, oil & gas, infrastructure roles. Omit for pure consumer-product software
   roles where the UTG / P&ID line reads as noise.
