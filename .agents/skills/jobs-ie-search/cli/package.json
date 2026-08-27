@@ -1,0 +1,17 @@
+{
+  "name": "jobs-ie-search",
+  "version": "1.0.0",
+  "description": "WebSearch-driven CLI for jobs.ie (Ireland). Honest about its limits.",
+  "type": "module",
+  "private": true,
+  "main": "src/cli.ts",
+  "scripts": {
+    "test": "bun test tests/"
+  },
+  "bin": {
+    "jobs-ie-search": "src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

@@ -5,6 +5,7 @@
 - **Portals:**
 | Portal | Skill folder | Source | Notes |
 |---|---|---|---|
+| arbeitnow | .agents/skills/arbeitnow-search | this repo | Free public JSON API (no auth); English-friendly German jobs, Berlin/Munich/Hamburg/Stuttgart/Frankfurt/Cologne; visa-sponsorship signal built into the site; UK sister site arbeitnow.co.uk since mid-2026 |
 | XING | .agents/skills/xing-search | rasstamann/ai-job-search-germany | personal use, low volume — see its ToS note |
 | Stepstone / Indeed | — | — | blocked for scraping; WebSearch fallback per the fork's docs |
 
@@ -13,4 +14,6 @@
   put them in documents/diplomas/); full address and date of birth traditionally included;
   Anschreiben (cover letter) is formal.
 - **Notes:** application etiquette is formal (Anrede, formal Sie); notice periods are long
-  (3 months common) — mention earliest start date accordingly.
+  (3 months common) — mention earliest start date accordingly. English-speaking roles are
+  disproportionately Berlin/Munich-based and tend to be in startups, SaaS, and
+  international teams; arbeitnow indexes these better than XING.
