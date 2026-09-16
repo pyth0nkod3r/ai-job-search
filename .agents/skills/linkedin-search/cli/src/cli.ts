@@ -126,14 +126,9 @@ async function main(): Promise<number> {
     }
 
     const parseIntFlag = (name: string, raw: string | boolean | string[]): number | null => {
-      // Number(), not parseInt(): parseInt truncates, so "--jobage 0.5"
-      // became 0 and silently dropped f_TPR from the request (#371).
-      // Whole numbers >= 1 only, matching the other portal CLIs.
-      const val = typeof raw === "string" ? Number(raw.trim()) : NaN
-      if (!Number.isInteger(val) || val < 1) {
-        process.stderr.write(
-          JSON.stringify({ error: `--${name} must be a whole number of at least 1, got "${raw}"`, code: "BAD_ARG" }) + "\n",
-        )
+      const val = parseInt(raw as string, 10)
+      if (isNaN(val)) {
+        process.stderr.write(JSON.stringify({ error: `--${name} must be a number, got "${raw}"`, code: "BAD_ARG" }) + "\n")
         return null
       }
       return val
@@ -145,8 +140,15 @@ async function main(): Promise<number> {
       flags.jobage = String(v)
     }
     if (flags["jobage-minutes"] !== undefined) {
-      const v = parseIntFlag("jobage-minutes", flags["jobage-minutes"])
+      const raw = flags["jobage-minutes"]
+      const v = parseIntFlag("jobage-minutes", raw)
       if (v === null) return 1
+      if (v <= 0) {
+        process.stderr.write(
+          JSON.stringify({ error: `--jobage-minutes must be a positive number, got "${raw}"`, code: "BAD_ARG" }) + "\n",
+        )
+        return 1
+      }
       flags["jobage-minutes"] = String(v)
     }
     if (flags.page !== undefined) {

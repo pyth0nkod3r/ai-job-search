@@ -1,4 +1,5 @@
 ---
+attribution: "Adapted from MadsLorentzen/ai-job-search (upstream portal skill, personal-use only per upstream ToS notes). Source files unmodified; added local bun.lockb-free install."
 name: freehire-search
 version: 1.0.0
 description: >
@@ -14,6 +15,7 @@ context: fork
 enabled: true  # set to false to keep this portal installed but have /scrape skip it
 allowed-tools: Bash(bun run .agents/skills/freehire-search/cli/src/cli.ts *)
 ---
+attribution: "Adapted from MadsLorentzen/ai-job-search (upstream portal skill, personal-use only per upstream ToS notes). Source files unmodified; added local bun.lockb-free install."
 
 # freehire Search Skill
 
